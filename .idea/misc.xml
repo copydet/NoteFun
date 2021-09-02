@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_android_logo.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_apple_logo.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_fast_forward_24.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_fast_rewind_24.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_linux_logo.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_menu.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_nintendo_switch_logo.xml" value="0.1" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/ic_play_arrow_24.xml" value="0.2" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable-v24/official_website_icon.xml" value="0.2" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable/ic_fowardbutton.xml" value="0.13055555555555556" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable/ic_game_logo.xml" value="0.1" />
+        <entry key="..\:/Users/copydet/AndroidStudioProjects/NoteFun2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13958333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

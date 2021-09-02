@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "32650443943",
+    "project_id": "notefun2",
+    "storage_bucket": "notefun2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32650443943:android:02426257d6f10ba668af82",
+        "android_client_info": {
+          "package_name": "com.example.notefun2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32650443943-nke8k6fgcamg0slbarvanv810d9skc5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHqBgh1oyPk2ZqaXbC17ELai9WezUzAyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32650443943-nke8k6fgcamg0slbarvanv810d9skc5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
