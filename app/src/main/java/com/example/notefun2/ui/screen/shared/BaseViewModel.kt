@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.notefun2.domain.model.enum_class.GameMode
-import com.example.notefun2.domain.model.enum_class.GenreGame
+import com.example.gamecore.domain.model.enum_class.GameMode
+import com.example.gamecore.domain.model.enum_class.GenreGame
 import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel(){

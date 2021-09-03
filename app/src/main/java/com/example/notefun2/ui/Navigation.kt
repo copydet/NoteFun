@@ -1,34 +1,23 @@
 package com.example.notefun2.ui
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.core.animate
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.DefaultTintColor
-import androidx.compose.ui.input.key.Key.Companion.Home
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
-import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
-import com.example.notefun2.R
 import com.example.notefun2.ui.screen.detail.GameDetailsScreen
 import com.example.notefun2.ui.screen.detail.GameDetailsViewModel
 import com.example.notefun2.ui.screen.example.ProfileScreenExample
@@ -39,11 +28,7 @@ import com.example.notefun2.ui.screen.popular.PopularGamesScreen
 import com.example.notefun2.ui.screen.popular.PopularGamesViewModel
 import com.example.notefun2.ui.screen.search.SearchScreen
 import com.example.notefun2.ui.screen.upcoming.UpcomingReleaseScreen
-import com.example.notefun2.ui.theme.MajorMono
-import com.example.notefun2.ui.theme.NoteFun2Theme
-import com.example.notefun2.ui.theme.VT323
 import com.google.accompanist.pager.ExperimentalPagerApi
-import kotlin.text.Typography.section
 
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi

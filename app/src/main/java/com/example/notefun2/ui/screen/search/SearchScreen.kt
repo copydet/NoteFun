@@ -23,9 +23,12 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import coil.compose.LocalImageLoader
+import coil.compose.rememberImagePainter
+import coil.request.ImageRequest
 import com.example.notefun2.ui.Routes
 import com.example.notefun2.ui.screen.shared.PlatformLogo
-import com.google.accompanist.coil.rememberCoilPainter
+import com.google.accompanist.imageloading.LoadPainterDefaults
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.placeholder
 import com.google.accompanist.placeholder.material.shimmer
@@ -150,7 +153,14 @@ fun SearchScreen(viewModel: SearchViewModel, navController: NavController) {
                         ) {
                             Row {
                                 Image(
-                                    painter = rememberCoilPainter(game.coverUrl),
+                                    painter = rememberImagePainter(
+                                        data = game.coverUrl,
+                                        imageLoader = LocalImageLoader.current,
+                                        builder = {
+                                            if (false == true) this.crossfade(LoadPainterDefaults.FadeInTransitionDuration)
+                                            placeholder(0)
+                                        }
+                                    ),
                                     contentDescription = game.name,
                                     Modifier
                                         .padding(end = 8.dp)

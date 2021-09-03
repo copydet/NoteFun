@@ -30,14 +30,5 @@
 
     <style name="Theme.NoteFun2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 -->
-    <style name="DialogTheme" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <item name="windowMinWidthMinor">70%</item>
-        <item name="windowMinWidthMajor">80%</item>
-        <item name="windowFixedHeightMinor">80%</item>
-        <item name="windowFixedHeightMajor">92%</item>
-    </style>
 
-    <style name="Theme.NoteFun2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.NoteFun2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

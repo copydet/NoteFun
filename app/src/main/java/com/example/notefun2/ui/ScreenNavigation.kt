@@ -1,6 +1,5 @@
 package com.example.notefun2.ui
 
-import androidx.annotation.StringRes
 import com.example.notefun2.R
 
 sealed class ScreenNavigation(var route: String, var icon: Int, var title: String){

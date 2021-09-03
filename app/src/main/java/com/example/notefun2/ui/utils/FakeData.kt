@@ -1,9 +1,9 @@
 package com.example.notefun2.ui.utils
 
-import com.example.notefun2.domain.model.Game
-import com.example.notefun2.domain.model.Platform
-import com.example.notefun2.domain.model.Release
-import com.example.notefun2.domain.model.enum_class.PlatformType
+import com.example.gamecore.domain.model.Game
+import com.example.gamecore.domain.model.Platform
+import com.example.gamecore.domain.model.Release
+import com.example.gamecore.domain.model.enum_class.PlatformType
 import java.util.*
 
 val FakeGame = Game(

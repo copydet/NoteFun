@@ -32,8 +32,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.api.igdb.utils.ImageSize
 import com.example.notefun2.R
-import com.example.notefun2.domain.model.Game
-import com.example.notefun2.domain.model.Release
+import com.example.gamecore.domain.model.Game
+import com.example.gamecore.domain.model.Release
 import com.example.notefun2.ui.Routes
 import com.example.notefun2.ui.screen.shared.*
 import com.example.notefun2.ui.theme.NoteFun2Theme

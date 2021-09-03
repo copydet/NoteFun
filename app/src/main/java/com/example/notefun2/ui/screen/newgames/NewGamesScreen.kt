@@ -5,16 +5,21 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.notefun2.R
 import com.example.notefun2.ui.Routes
+import com.example.notefun2.ui.screen.home.HomeScreenBody
 import com.example.notefun2.ui.screen.shared.*
 import com.example.notefun2.ui.utils.GameCardPlaceHolder
 import com.example.notefun2.ui.utils.gameTypeNames
@@ -29,21 +34,13 @@ fun NewGamesScreen(
 ) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
 
-    CollapsingTabBarScaffold(
-        topAppBar = {
+    Scaffold(
+        topBar = {
             NoteFunTopAppBar(
                 title = { Text("New Games", fontSize = 18.sp) },
-                drawerState = drawerState,
+                drawerState = drawerState
             )
-        },
-        drawerState = drawerState,
-        drawerContent = {
-            NavDrawer(
-                navController = navController,
-                modifier = Modifier.background(MaterialTheme.colors.surface),
-                state = drawerState,
-            )
-        },
+        }
     ) {
         NewGamesScreenBody(
             viewModel = viewModel,

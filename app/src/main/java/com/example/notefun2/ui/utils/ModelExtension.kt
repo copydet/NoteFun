@@ -1,9 +1,9 @@
 package com.example.notefun2.ui.utils
 
 import com.example.notefun2.R
-import com.example.notefun2.domain.model.Game
-import com.example.notefun2.domain.model.enum_class.GenreGame
-import com.example.notefun2.domain.model.enum_class.PlatformType
+import com.example.gamecore.domain.model.Game
+import com.example.gamecore.domain.model.enum_class.GenreGame
+import com.example.gamecore.domain.model.enum_class.PlatformType
 import java.text.SimpleDateFormat
 import java.util.*
 

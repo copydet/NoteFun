@@ -1,13 +1,9 @@
 <resources>
     <string name="app_name">NoteFun2</string>
 
-    <string name="menu_button_content_description">Menu button</string>
     <string name="search_btn_content_description">Search game</string>
     <string name="popular_txt">Popular Games</string>
     <string name="new_txt">New Games</string>
     <string name="upcoming_txt">Upcoming Games</string>
     <string name="highly_rated_txt">Highly Rated</string>
-    <string name="end_of_the_page_reached_msg">Oops, there are no more games to load, you have reached the end of the page.</string>
-    <string name="title_activity_simple_component_two">SimpleComponentTwo</string>
-    <string name="home">Home</string>
 </resources>

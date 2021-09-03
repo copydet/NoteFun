@@ -2,11 +2,11 @@ package com.example.notefun2.ui.screen.popular
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.notefun2.data.source.GamesRepository
-import com.example.notefun2.data.source.remote.network.igdb.provider.ListGamesProvider
-import com.example.notefun2.domain.model.Game
-import com.example.notefun2.domain.model.enum_class.GameMode
-import com.example.notefun2.domain.model.enum_class.GenreGame
+import com.example.gamecore.data.source.GamesRepository
+import com.example.gamecore.data.source.remote.network.igdb.provider.ListGamesProvider
+import com.example.gamecore.domain.model.Game
+import com.example.gamecore.domain.model.enum_class.GameMode
+import com.example.gamecore.domain.model.enum_class.GenreGame
 import com.example.notefun2.ui.screen.shared.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

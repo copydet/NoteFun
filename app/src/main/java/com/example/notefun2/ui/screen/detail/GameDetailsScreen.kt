@@ -32,9 +32,9 @@ import androidx.compose.ui.util.lerp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import com.example.notefun2.MainActivity
-import com.example.notefun2.domain.model.Game
-import com.example.notefun2.domain.model.GameCompany
-import com.example.notefun2.domain.model.enum_class.GenreGame
+import com.example.gamecore.domain.model.Game
+import com.example.gamecore.domain.model.GameCompany
+import com.example.gamecore.domain.model.enum_class.GenreGame
 import com.example.notefun2.ui.Routes
 import com.example.notefun2.ui.screen.shared.GameCard
 import com.example.notefun2.ui.screen.shared.GameScore

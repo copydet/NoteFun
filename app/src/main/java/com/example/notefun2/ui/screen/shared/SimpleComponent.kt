@@ -6,10 +6,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.TabRowDefaults.tabIndicatorOffset
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,35 +20,21 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import com.example.notefun2.R
-import com.example.notefun2.domain.model.Game
-import com.example.notefun2.domain.model.Release
-import com.example.notefun2.domain.model.enum_class.PlatformType
-import com.example.notefun2.ui.Routes
+import com.example.gamecore.domain.model.Game
+import com.example.gamecore.domain.model.Release
+import com.example.gamecore.domain.model.enum_class.PlatformType
 import com.example.notefun2.ui.theme.*
 import com.example.notefun2.ui.utils.bannerUrl
-import com.example.notefun2.ui.utils.getYearTimestamp
 import com.example.notefun2.ui.utils.logo
 import com.google.accompanist.coil.rememberCoilPainter
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
 import kotlin.math.absoluteValue
-import kotlin.time.Duration
-import kotlin.time.ExperimentalTime
 
 const val TopAppBarHeight = 50
 const val TopAppBarVerticalPadding = 8
@@ -90,9 +72,10 @@ fun GameCard(
         color = Color.Gray.copy(0.05f),
         shape = MaterialTheme.shapes.small){
         Column{
-            Image(painter = rememberCoilPainter(request = game.bannerUrl,
+            Image(painter = rememberCoilPainter(
+                request = game.bannerUrl,
                 previewPlaceholder = R.drawable.apex_legends_cover,
-                fadeIn = true
+                fadeIn = true,
             ),
                 contentDescription = game.name,
                 modifier = Modifier
@@ -169,236 +152,6 @@ fun NoteFunTopAppBar(
         elevation = 1.dp
     )
 }
-
-@OptIn(ExperimentalTime::class)
-@Composable
-fun NavDrawer(navController: NavController, state: DrawerState, modifier: Modifier = Modifier){
-    val currenDate = Clock.System.now()
-    val coroutineScope = rememberCoroutineScope()
-    val closeDrawer = {
-        coroutineScope.launch {
-            state.close()
-        }
-    }
-    Card(elevation = 8.dp) {
-        Column(
-            modifier
-                .fillMaxHeight()
-                .width((LocalConfiguration.current.screenWidthDp * 0.75).dp)
-                .verticalScroll(rememberScrollState())
-                .background(MaterialTheme.colors.surface)
-        ){
-            /*
-            Image(painter = painterResource(id = R.drawable.nav_drawer_header),
-                contentDescription = null,
-                modifier = Modifier
-                    .padding(end = 8.dp)
-                    .fillMaxWidth()
-            )
-             */
-
-            Divider(Modifier.padding(top = 8.dp))
-
-            Row(
-                Modifier
-                    .padding(horizontal = 16.dp)
-                    .padding(top = 16.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ){
-                Icon(imageVector = Icons.Filled.Home, contentDescription = null,
-                    tint = MaterialTheme.colors.primary,
-                    modifier = Modifier.size(22.dp)
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text("Home",
-                    style = MaterialTheme.typography.h6.copy(fontSize = 17.sp),
-                    modifier = Modifier
-                        .clickable {
-                            navController.navigate(Routes.home)
-                            closeDrawer()
-                        }
-                        .padding(8.dp)
-                )
-            }
-            Row(
-                Modifier
-                    .padding(horizontal = 16.dp), verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.Search,
-                    contentDescription = null,
-                    tint = MaterialTheme.colors.primary,
-                    modifier = Modifier.size(22.dp),
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(
-                    "Search",
-                    style = MaterialTheme.typography.h6.copy(fontSize = 17.sp),
-                    modifier = Modifier
-                        .clickable {
-                            navController.navigate(Routes.search)
-                            closeDrawer()
-                        }
-                        .padding(8.dp)
-                )
-            }
-            Row(
-                Modifier
-                    .padding(horizontal = 16.dp), verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.upcoming_release_icon),
-                    contentDescription = null,
-                    tint = MaterialTheme.colors.primary,
-                    modifier = Modifier.size(19.dp),
-                )
-
-                Spacer(modifier = Modifier.width(4.dp))
-
-                Text(
-                    "Upcoming Releases",
-                    style = MaterialTheme.typography.h6.copy(fontSize = 17.sp),
-                    modifier = Modifier
-                        .clickable {
-                            navController.navigate(Routes.upcomingRelease)
-                            closeDrawer()
-                        }
-                        .padding(8.dp)
-                )
-            }
-            Row(
-                Modifier
-                    .padding(horizontal = 16.dp)
-                    .padding(top = 11.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.new_release_icon),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .padding(top = 3.dp)
-                        .size(19.dp),
-                )
-
-                Spacer(modifier = Modifier.width(12.dp))
-
-                Column {
-                    Text(
-                        "New Games",
-                        style = MaterialTheme.typography.h6.copy(fontSize = 17.sp),
-                    )
-                    Text(
-                        "Last 7 days",
-                        Modifier
-                            .clickable {
-                                navController.navigate(
-                                    Routes.newGames(
-                                        currenDate
-                                            .minus(Duration.days(7))
-                                            .toEpochMilliseconds(),
-                                        "Released in the last 7 days",
-                                    )
-                                )
-                                closeDrawer()
-                            }
-                            .padding(8.dp),
-                    )
-                    Text(
-                        "Last 30 days",
-                        Modifier
-                            .clickable {
-                                navController.navigate(
-                                    Routes.newGames(
-                                        currenDate
-                                            .minus(Duration.days(30))
-                                            .toEpochMilliseconds(),
-                                        "Released in the last 30 days",
-                                    )
-                                )
-                                closeDrawer()
-                            }
-                            .padding(8.dp),
-                    )
-                    Text(
-                        "This year",
-                        Modifier
-                            .clickable {
-                                navController.navigate(
-                                    Routes.newGames(getYearTimestamp(), "Released this year"),
-                                )
-                                closeDrawer()
-                            }
-                            .padding(8.dp),
-                    )
-                }
-            }
-
-            Row(
-                Modifier
-                    .padding(horizontal = 16.dp)
-                    .padding(top = 13.dp)
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.top_100_icon),
-                    contentDescription = null,
-                    tint = MaterialTheme.colors.primary,
-                    modifier = Modifier
-                        .padding(top = 3.dp)
-                        .size(20.dp),
-                )
-
-                Spacer(modifier = Modifier.width(12.dp))
-
-                Column {
-                    Text(
-                        "Popular Games",
-                        style = MaterialTheme.typography.h6.copy(fontSize = 17.sp),
-                    )
-
-                    Text(
-                        "This year",
-                        Modifier
-                            .clickable {
-                                navController.navigate(
-                                    Routes.popularGames(getYearTimestamp(), "Released this year")
-                                )
-                                closeDrawer()
-                            }
-                            .padding(8.dp),
-                    )
-                    Text(
-                        "Last 5 years",
-                        Modifier
-                            .clickable {
-                                coroutineScope.launch {
-                                    state.close()
-                                }
-                                navController.navigate(
-                                    Routes.popularGames(
-                                        getYearTimestamp(currenDate.toLocalDateTime(TimeZone.currentSystemDefault()).year - 5),
-                                        "Released in the last 5 years"
-                                    )
-                                )
-                            }
-                            .padding(8.dp),
-                    )
-                    Text(
-                        "All time",
-                        Modifier
-                            .clickable {
-                                navController.navigate(
-                                    Routes.popularGames(0, " ")
-                                )
-                                closeDrawer()
-                            }
-                            .padding(8.dp),
-                    )
-                }
-            }
-        }
-
-    }
-}
-
 
 @Composable
 fun ReleaseCard(

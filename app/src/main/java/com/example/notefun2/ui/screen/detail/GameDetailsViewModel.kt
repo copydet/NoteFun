@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.notefun2.data.source.DetailGameRepository
-import com.example.notefun2.data.source.GamesRepository
-import com.example.notefun2.domain.model.Game
+import com.example.gamecore.data.source.DetailGameRepository
+import com.example.gamecore.data.source.GamesRepository
+import com.example.gamecore.domain.model.Game
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
