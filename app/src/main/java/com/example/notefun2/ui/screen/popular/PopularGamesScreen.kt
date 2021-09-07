@@ -32,13 +32,10 @@ fun PopularGamesScreen(
     navController: NavController,
     subtitle: String,
 ) {
-    val drawerState = rememberDrawerState(DrawerValue.Closed)
-
     Scaffold(
         topBar = {
             NoteFunTopAppBar(
                 title = { Text("Popular Games", fontSize = 18.sp) },
-                drawerState = drawerState,
             )
         }
     ) {

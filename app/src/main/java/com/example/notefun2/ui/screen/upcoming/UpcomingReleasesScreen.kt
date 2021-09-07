@@ -37,7 +37,7 @@ fun UpcomingReleaseScreen(
             NoteFunTopAppBar(
                 title = { Text("Upcoming Release", fontSize = 18.sp,
                 fontFamily = MajorMono) },
-                drawerState = drawerState,
+
                 // TODO implement sorting feature
 //                actions = {
 //                    Icon(

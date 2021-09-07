@@ -42,7 +42,7 @@ const val TopAppBarVerticalPadding = 8
 @Composable
 fun NoteFunLogo(modifier: Modifier){
     Image(painterResource(id = R.drawable.logo), contentDescription = "logo",
-    modifier = Modifier.size(120.dp))
+    modifier = modifier.size(120.dp))
 }
 
 @Composable
@@ -132,12 +132,9 @@ fun GameScore(
 @Composable
 fun NoteFunTopAppBar(
     title: @Composable () -> Unit,
-    drawerState: DrawerState,
     modifier: Modifier = Modifier,
     actions: @Composable RowScope.()-> Unit = {},
 ){
-
-    val coroutineScope = rememberCoroutineScope()
 
     TopAppBar(
         title = title,

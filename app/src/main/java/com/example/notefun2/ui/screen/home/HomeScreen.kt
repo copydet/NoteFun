@@ -47,13 +47,11 @@ import kotlin.time.ExperimentalTime
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
-    val drawerState = rememberDrawerState(DrawerValue.Closed)
 
     Scaffold(
         topBar = {
             NoteFunTopAppBar(
                 title = { NoteFunLogo(modifier = Modifier.padding(top = 4.dp)) },
-                drawerState = drawerState,
                 actions = {
                     IconButton(onClick = { navController.navigate(Routes.search) }) {
                         Icon(
@@ -382,7 +380,6 @@ fun HomeScreenPreview() {
         Scaffold(topBar = {
             NoteFunTopAppBar(
                 title = { NoteFunLogo(modifier = Modifier.padding(top = 4.dp)) },
-                drawerState = rememberDrawerState(initialValue = DrawerValue.Closed),
                 actions = {
 
                 },
